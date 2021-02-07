@@ -24,7 +24,7 @@
 
 ## Link
 
-https://maggie-mango.github.io/Program-Language-Selector/
+Unavailable until more features are added
 
 ## Specs
 
@@ -39,7 +39,9 @@ https://maggie-mango.github.io/Program-Language-Selector/
 
 ## Known Bugs
 
-* 
+* Does not take more than one word
+* User needs to refresh to try again
+* Does not use a declarative approach
 
 ## License
 

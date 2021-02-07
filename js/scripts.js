@@ -1,3 +1,5 @@
+
+//business logic
 let vowels = ['a', 'e', 'i', 'o', 'u']
 function pigLatin(word) {
   let result = ""
@@ -14,7 +16,7 @@ function pigLatin(word) {
     for (let i of word) {
       if (vowels.includes(i)) {
         vowelIndex = word.indexOf(i);
-      if(word.slice(i, i+2) === 'qu') i += 1;
+      if(word.slice(i, i+1) === 'qu') i += 1;
       }
     }
     // construct the sentence
@@ -22,3 +24,12 @@ function pigLatin(word) {
     return result
   }    
 }
+
+//business logic
+$(document).ready(function() {
+  $("form#formInput").submit(function(event) {
+    event.preventDefault();
+    var inputWord= $("input").val();
+    $(".show").append("Pig Latin Version: " + pigLatin(inputWord))
+  });
+});
