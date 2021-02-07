@@ -25,11 +25,21 @@ function pigLatin(word) {
   }    
 }
 
-//business logic
+//user interface logic
 $(document).ready(function() {
   $("form#formInput").submit(function(event) {
     event.preventDefault();
-    var inputWord= $("input").val();
-    $(".show").append("Pig Latin Version: " + pigLatin(inputWord))
+    var inputWord = $("input").val();
+    $(".show").append("<li>Pig Latin Version of " + inputWord + " :" + pigLatin(inputWord)+ "</li>")
+    $(".startOver").show();
+  });
+});
+
+$(function () {
+  $("#resetbtn").on("click", function (e) {
+      e.preventDefault();
+     // $('#theForm')[0].reset(); // Or
+      $('form#formInput').trigger("reset");
+   
   });
 });
