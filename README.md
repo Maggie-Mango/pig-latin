@@ -32,9 +32,9 @@ https://maggie-mango.github.io/Program-Language-Selector/
 |:--------:|:--------:|:--------:|
 |`pigLatin()`| "It will check for words beginning with a vowel" | (pigLatin("a")).toEqual(true)) |
 |`pigLatin()`| "It will add 'way' to the end of words that begin with a vowel" | (pigLatin("a")).toEqual("away") |
-|`pigLatin()`| "It will check if the first one or two letters begin with consonants" | (pigLatin("chair")).toEqual("true") |
+|`pigLatin()`| "It will move the first one or two consonants to the end and add 'way'" | (pigLatin("chair")).toEqual("true") |
 |`pigLatin()`| "It will check for the first one or two consonants that also include 'qu'" | (pigLatin("squeal")).toEqual("true") |
-|`pigLatin()`| "It will move the first one or two consonants to the end and add 'way'" | (pigLatin("squeal")).toEqual(ealsquay)) |
+
 
 
 ## Known Bugs
