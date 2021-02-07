@@ -8,7 +8,9 @@ function pigLatin(word) {
     result = word.concat('way')
     return result
   //first letter is consonant
-  } else if (word.includes("%qu%")) {
+  } else if (word.includes(" ")) {
+    alert("this looks like more than one word... try again.");
+    $("#resetbtn").show();
 
   }
   
@@ -30,8 +32,8 @@ $(document).ready(function() {
   $("form#formInput").submit(function(event) {
     event.preventDefault();
     var inputWord = $("input").val();
-    $(".show").append("<li>Pig Latin Version of " + inputWord + " :" + pigLatin(inputWord)+ "</li>")
-    $(".startOver").show();
+    $(".show").append("<li>Pig Latin Version of " + inputWord + ": " + pigLatin(inputWord)+ "</li>")
+    $("#resetbtn").show();
   });
 });
 
@@ -40,6 +42,7 @@ $(function () {
       e.preventDefault();
      // $('#theForm')[0].reset(); // Or
       $('form#formInput').trigger("reset");
+      $("#resetbtn").hide();
    
   });
 });
