@@ -12,9 +12,7 @@ function pigLatin(word) {
   } else if (word.includes(" ")) {
     alert("this looks like more than one word... try again.");
     $("#resetbtn").show();
-
   }
-  
     else {
     //loops through inputted word until they hit a vowel
     for (let i of word) {
@@ -32,28 +30,24 @@ function pigLatin(word) {
   }    
 }
 
-/* Another way to solve it
+/* A simpler way to solve it
+let vowels = ['a', 'e', 'i', 'o', 'u']
 function pigLatin(word) {
-	let vowels = ['a','e','i','o','u']
-
+  let vowelIndex = 0
+  //checks if first character is a vowel
   if (vowels.includes(word[0]) === true) {
-    word = word.concat('way')
-    return word
+    return word.concat('way')
+  } else {
+  for (let i = 0; i<word.length; i++) {
+  if (vowels.indexOf(word[i]) > -1) {
+      firstPart = word.slice(0, i);
+      secondPart = word.slice(i,word.length)      
   }
-	for (let i = 0; i<word.length; i++){
-  	//The indexOf() method returns the position of the first occurrence of a specified value in a string. This method returns -1 if the value to search for never occurs.
-  if (["a", "e", "i", "o", "u"].indexOf(word[i]) > -1){
-      var firstcons = word.slice(0, i);
-      console.log(word.slice(0,i))
-      var middle = word.slice(i, word.length);
-      console.log(word.slice(i, word.length))
-      word = middle+firstcons+"ay";
-      break;}
   }
-    return word;
+  return  secondPart + firstPart + "ay"
+	}
 }
-
-console.log(pigLatin("apple"))
+console.log(pigLatin("very"))
 */
 
 //user interface logic
