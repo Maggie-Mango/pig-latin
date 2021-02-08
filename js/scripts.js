@@ -22,7 +22,7 @@ function pigLatin(word) {
         vowelIndex = word.indexOf(i);
         //this break is hella important or else the loop will keep trying to find vowels
         break;
-      //checks to if `qu` is part of the word
+      //checks to if `qu` is part of the
       if(word.slice(i, i+1) === 'qu') i += 1;
       }
     }
@@ -31,6 +31,30 @@ function pigLatin(word) {
     return result
   }    
 }
+
+/* Another way to solve it
+function pigLatin(word) {
+	let vowels = ['a','e','i','o','u']
+
+  if (vowels.includes(word[0]) === true) {
+    word = word.concat('way')
+    return word
+  }
+	for (let i = 0; i<word.length; i++){
+  	//The indexOf() method returns the position of the first occurrence of a specified value in a string. This method returns -1 if the value to search for never occurs.
+  if (["a", "e", "i", "o", "u"].indexOf(word[i]) > -1){
+      var firstcons = word.slice(0, i);
+      console.log(word.slice(0,i))
+      var middle = word.slice(i, word.length);
+      console.log(word.slice(i, word.length))
+      word = middle+firstcons+"ay";
+      break;}
+  }
+    return word;
+}
+
+console.log(pigLatin("apple"))
+*/
 
 //user interface logic
 $(document).ready(function() {
