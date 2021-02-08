@@ -20,13 +20,14 @@ function pigLatin(word) {
     for (let i of word) {
       if (vowels.includes(i)) {
         vowelIndex = word.indexOf(i);
-      //loops through inputted word until it hits `qu` and then adds 1 to the i
-      if (word.slice(i, i+1) === 'qu') i += 1;
+        //this break is hella important or else the loop will keep trying to find vowels
+        break;
+      //checks to if `qu` is part of the word
+      if(word.slice(i, i+1) === 'qu') i += 1;
       }
     }
-    // construct the sentence (ex: "chair" is broken down as => "air" + "ch" + "ay")
-    result = word.slice(vowelIndex-1) + word.slice(0, vowelIndex-1) + "ay"
-
+    // constructs the sentence
+    result = word.slice(vowelIndex) + word.slice(0, vowelIndex) + "ay"
     return result
   }    
 }
@@ -44,6 +45,7 @@ $(document).ready(function() {
 $(function () {
   $("#resetbtn").on("click", function (e) {
       e.preventDefault();
+     // $('#theForm')[0].reset(); // Or
       $('form#formInput').trigger("reset");
       $("#resetbtn").hide();
   });
